@@ -1,0 +1,10 @@
+.git
+.github
+.cache
+.run
+cmake*
+build
+docker
+docs
+media
+*.md

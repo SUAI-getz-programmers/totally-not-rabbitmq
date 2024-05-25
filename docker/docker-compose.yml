@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: ./docker/server/Dockerfile
+    ports:
+      - "3030:3030"
+
+  client:
+    build:
+      context: ..
+      dockerfile: ./docker/client/Dockerfile
+    depends_on:
+      - server
+
+  worker:
+    build:
+      context: ..
+      dockerfile: ./docker/worker/Dockerfile
+    depends_on:
+      - server
